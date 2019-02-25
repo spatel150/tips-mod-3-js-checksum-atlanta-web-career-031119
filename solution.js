@@ -6,8 +6,25 @@ const data = [
   [265, 262, 6206, 2207, 5712]
 ]
 
-const minMax = array => {
-	const sortedArray = array.slice().sort()
+// easier
+function checksum (data) {
+	let result = 0;
+
+	for (const row of data) {
+		const sortedRow = row.slice().sort()
+		const min = sortedRow[0]
+		const max = sortedRow[sortedRow.length -1]
+		const difference = max - min
+		result += difference
+	}
+	
+	return result
+}
+
+
+// harder
+const minMax = row => {
+	const sortedArray = row.slice().sort()
 	const min = sortedArray[0]
 	const max = sortedArray[sortedArray.length - 1]
 	return { min, max }
