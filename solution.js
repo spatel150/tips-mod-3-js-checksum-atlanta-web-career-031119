@@ -11,7 +11,7 @@ function checksum (data) {
 	var result = 0;
 
 	for (var row of data) {
-		var sortedRow = row.slice().sort();
+		var sortedRow = row.slice().sort((a, b) => a - b);
 		var min = sortedRow[0];
 		var max = sortedRow[sortedRow.length -1];
 		var difference = max - min;
@@ -24,7 +24,7 @@ function checksum (data) {
 
 /* --- ES6 / Harder --- */
 const minMax = row => {
-	const sortedArray = row.slice().sort()
+	const sortedArray = row.slice().sort((a, b) => a - b)
 	const min = sortedArray[0]
 	const max = sortedArray[sortedArray.length - 1]
 	return { min, max }
