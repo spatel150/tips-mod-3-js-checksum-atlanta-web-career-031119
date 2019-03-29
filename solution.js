@@ -35,5 +35,5 @@ const diff = ({ min, max }) => max - min
 const checksum = data =>
 	data.reduce((acc, row) => acc + diff(minMax(row)), 0)
 
-// answer: 8828
+// answer: 13131
 checksum(data)
