@@ -1,4 +1,4 @@
-const data = [
+const arr = [
     [409, 194, 207, 470, 178],
     [454, 235, 333, 511, 103],
     [474, 293, 525, 372, 408],
@@ -7,17 +7,23 @@ const data = [
   ]
   
 
-function checkSum(data) {
-
-    let num = Math.floor(Math.abs(num))
-
-    while (num > 0) {
-        checkSum += num % 10;
-        num = Math.floor(num / 10)
-    }
-
-    return checkSum;
-
+function max(arr) {
+    return arr.reduce(function(a, b){
+        return Math.max(a, b)
+    })
 }
 
-checkSum(data)
+function min(arr) {
+    return arr.reduce(function(a, b){
+        return Math.min(a, b)
+    })
+}
+
+function checkSum_1(arr) {
+    let checkSum = 0;
+    arr.forEach(function(item) {
+        checkSum += (max(item) - min(item))
+    })
+    
+    return checkSum
+}
